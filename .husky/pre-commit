@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+echo "[Husky] Running pre-commit hooks..."
+
+npm run lint:fix
+
+git add .
