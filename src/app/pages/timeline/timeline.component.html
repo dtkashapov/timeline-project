@@ -1,0 +1,31 @@
+<div class="timeline-container">
+    <div class="timeline-header">
+        <h1>Таймлайн событий</h1>
+        <button routerLink="/" class="back-button">← Назад к дашборду</button>
+    </div>
+
+    <app-loader>
+        @if (data$ | async; as data) {
+            <div class="timeline">
+                <div class="scale">
+                    <div class="timeline-start">
+                        {{ data.intervalDates.dateStart | date: 'dd.MM HH:mm' }}
+                    </div>
+                    <div class="timeline-end">
+                        {{ data.intervalDates.dateEnd | date: 'dd.MM HH:mm' }}
+                    </div>
+                </div>
+
+                <div class="track">
+                    @for (event of data.events; track idx; let idx = $index) {
+                        <app-timeline-event
+                            class="event"
+                            [event]="event | mapTimelineEvent: data.intervalDates"
+                        >
+                        </app-timeline-event>
+                    }
+                </div>
+            </div>
+        }
+    </app-loader>
+</div>

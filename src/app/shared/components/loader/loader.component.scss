@@ -1,0 +1,51 @@
+@use 'variables' as *;
+@use 'mixins' as mix;
+
+.loading {
+    @include mix.flex-center;
+
+    flex-direction: column;
+    gap: 1rem;
+    padding: 3rem;
+
+    .spinner {
+        width: 40px;
+        height: 40px;
+        border: 4px solid $border-color;
+        border-top: 4px solid $primary-color;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+    }
+
+    p {
+        color: $text-light;
+    }
+}
+
+.error {
+    @include mix.flex-center;
+
+    flex-direction: column;
+    gap: 1rem;
+    padding: 3rem;
+    text-align: center;
+
+    p {
+        color: $danger-color;
+        font-weight: 500;
+    }
+
+    .retry-button {
+        @include mix.button-primary;
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

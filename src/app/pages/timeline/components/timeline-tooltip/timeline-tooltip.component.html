@@ -1,0 +1,24 @@
+<div class="timeline-tooltip">
+    <div class="tooltip-header">
+        <span class="event-type-badge" [style.background]="color">
+            {{ getEventTypeName(event.type) }}
+        </span>
+    </div>
+
+    <div class="tooltip-content">
+        <div class="date-row">
+            <strong>Начало:</strong>
+            <span>{{ formatDate(event.dateStart) }}</span>
+        </div>
+
+        <div class="date-row">
+            <strong>Окончание:</strong>
+            <span>{{ formatDate(event.dateEnd) }}</span>
+        </div>
+
+        <div class="date-row">
+            <strong>Тип:</strong>
+            <span>{{ event.type }}</span>
+        </div>
+    </div>
+</div>

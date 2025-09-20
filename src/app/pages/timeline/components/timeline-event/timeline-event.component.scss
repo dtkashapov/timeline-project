@@ -1,0 +1,10 @@
+@use 'variables' as *;
+@use 'mixins' as mix;
+
+.timeline-event {
+    position: absolute;
+    height: 100%;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}

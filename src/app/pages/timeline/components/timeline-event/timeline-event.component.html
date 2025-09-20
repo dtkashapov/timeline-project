@@ -1,0 +1,8 @@
+<div
+    class="timeline-event"
+    [style.left.%]="event.position"
+    [style.width.%]="event.width"
+    [style.background]="event.color"
+    (mouseenter)="showTooltip($event, event)"
+    (mouseleave)="hideTooltip()"
+></div>
