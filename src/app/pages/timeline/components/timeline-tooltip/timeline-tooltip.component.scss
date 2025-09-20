@@ -1,0 +1,44 @@
+@use 'variables' as *;
+
+.timeline-tooltip {
+    background: $white;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: $shadow-lg;
+    border: 1px solid $border-color;
+    min-width: 250px;
+
+    .tooltip-header {
+        margin-bottom: 0.75rem;
+
+        .event-type-badge {
+            color: $white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+    }
+
+    .tooltip-content {
+        .date-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            strong {
+                color: $text-dark;
+            }
+
+            span {
+                color: $text-light;
+            }
+        }
+    }
+}

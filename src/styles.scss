@@ -1,1 +1,80 @@
-/* You can add global styles to this file, and also import other style files */
+@use 'sass:color';
+@use 'variables' as *;
+@use 'mixins' as mix;
+@use 'utilities';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        'Segoe UI',
+        Roboto,
+        sans-serif;
+    line-height: 1.6;
+    color: $text-dark;
+    background-color: $bg-light;
+}
+
+.header {
+    background: $primary-gradient;
+    padding: 1rem 2rem;
+    box-shadow: $shadow-sm;
+
+    .wrapper {
+        max-width: 1200px;
+        margin: 0 auto;
+
+        @include mix.flex-between;
+    }
+
+    .title {
+        color: $white;
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+}
+
+.primary-button {
+    @include mix.button-primary;
+}
+
+.back-button {
+    background: $secondary-color;
+    color: $white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: $transition;
+
+    &:hover {
+        background: $secondary-color-dark;
+    }
+}
+
+.card {
+    background: $white;
+    padding: 2rem;
+    border-radius: $border-radius;
+    box-shadow: $shadow-md;
+    border: 1px solid $border-color;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.text-center {
+    text-align: center;
+}

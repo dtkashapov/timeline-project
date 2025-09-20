@@ -1,0 +1,41 @@
+@use 'variables' as *;
+@use 'mixins' as mix;
+
+.timeline-container {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+
+    .timeline-header {
+        @include mix.flex-between;
+
+        margin-bottom: 2rem;
+
+        h1 {
+            color: $text-dark;
+            font-size: 2rem;
+        }
+    }
+
+    .timeline {
+        margin-bottom: 2rem;
+
+        .scale {
+            @include mix.flex-between;
+
+            margin-bottom: 1rem;
+            padding: 0.5rem 0;
+            color: $text-light;
+            font-size: 0.875rem;
+        }
+
+        .track {
+            position: relative;
+            height: 40px;
+            background: $bg-light;
+            border-radius: 8px;
+            border: 1px solid $border-color;
+        }
+    }
+}
